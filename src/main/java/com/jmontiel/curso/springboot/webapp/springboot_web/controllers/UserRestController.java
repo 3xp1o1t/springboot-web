@@ -1,11 +1,15 @@
 package com.jmontiel.curso.springboot.webapp.springboot_web.controllers;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jmontiel.curso.springboot.webapp.springboot_web.models.User;
 import com.jmontiel.curso.springboot.webapp.springboot_web.models.dto.UserDto;
+
 
 @RestController
 @RequestMapping("/api")
@@ -19,6 +23,17 @@ public class UserRestController {
     userDto.setTitle("Hola mundo usando DTOs");
     userDto.setUser(user);
     return  userDto;
+  }
+
+  @GetMapping("/list")
+  public List<User> list() {
+    User user = new User("Jesus", "Montiel");
+    User user2 = new User("Angelica", "Mendoza");
+    User user3 = new User("Carmen", "Montiel");
+
+    List<User> users = Arrays.asList(user, user2, user3);
+
+    return users;
   }
 
   // USING MAP
