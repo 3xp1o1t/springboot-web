@@ -30,10 +30,9 @@ public class UserRestController {
     User user = new User("Jesus", "Montiel");
     User user2 = new User("Angelica", "Mendoza");
     User user3 = new User("Carmen", "Montiel");
+    User user4 = new User("Pedro", "Barajas");
 
-    List<User> users = Arrays.asList(user, user2, user3);
-
-    return users;
+    return Arrays.asList(user, user2, user3, user4);
   }
 
   // USING MAP
